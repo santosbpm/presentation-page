@@ -158,7 +158,7 @@ li#link-4:hover:before {
 }
 
 li#link-5:hover:before {
-    box-shadow: 0 0 15px #ff0000;
+    box-shadow: 0 0 15px #d93025;
 }
 
 li#link-1:hover {
@@ -198,9 +198,11 @@ footer {
 }
 
 .perfil {
-    width: 100%;
+    width: 75%;
+    cursor: pointer;
+    border-radius: 50%;
 }
 
-.logo {
+img.logo {
     width: 10%;
 }
