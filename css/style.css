@@ -21,66 +21,81 @@ body {
     align-items: center;
 }
 
-.border-1 {
+.border {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4%;
+    padding: 0.4em;
+    box-shadow:
+        0 0 .1rem #fff,
+        0 0 .1rem #fff,
+        0 0 1rem #FFC959,
+        0 0 0.4rem #FFC959,
+        0 0 1.4rem #FFC959,
+        inset 0 0 1rem #FFC959,
+        inset 0 0 0.4rem #FFC959,
+        inset 0 0 1.4rem #FFC959;
+}
+
+#border-1 {
     width: 600px;
     height: 600px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
     border: 13px solid #fff;
-    border-radius: 4%;
-    padding: 0.4em;
-    box-shadow: 
-        0 0 .2rem #fff,
-        0 0 1rem #FFC959,
-        0 0 0.4rem #FFC959,
-        0 0 1.4rem #FFC959,
-        inset 0 0 1rem #FFC959,
-        inset 0 0 0.4rem #FFC959,
-        inset 0 0 1.4rem #FFC959;
 }
 
-.border-2 {
+#border-2 {
     width: 425px;
     height: 425px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
     border: 8px solid #fff;
-    border-radius: 4%;
-    padding: 0.4em;
-    box-shadow: 
-        0 0 .2rem #fff,
-        0 0 .2rem #fff,
-        0 0 1rem #FFC959,
-        0 0 0.4rem #FFC959,
-        0 0 1.4rem #FFC959,
-        inset 0 0 1rem #FFC959,
-        inset 0 0 0.4rem #FFC959,
-        inset 0 0 1.4rem #FFC959;
 }
 
-.border-3 {
+#border-3 {
     width: 300px;
     height: 300px;
+    border: 3px solid #fff;
+}
+
+.appear {
+    transform: scale(0);
+    transition: all 1s ease-in-out;
+    backface-visibility: hidden;
+}
+
+#about {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    border: 3px solid #fff;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform-style: preserve-3d;
+    transition: all 2s;
+}
+
+.face {
+    width: 425px;
+    height: 425px;
+    position: absolute;
+    background-color: #000;
+    border: 1px solid #FFC959;
     border-radius: 4%;
-    padding: 0.4em;
-    box-shadow: 
-        0 0 .2rem #fff,
-        0 0 .2rem #fff,
+    padding: 2em;
+    box-shadow:
+        0 0 .1rem #000,
+        0 0 .1rem #000,
         0 0 1rem #FFC959,
         0 0 0.4rem #FFC959,
         0 0 1.4rem #FFC959,
-        inset 0 0 1rem #FFC959,
-        inset 0 0 0.4rem #FFC959,
-        inset 0 0 1.4rem #FFC959;
+        inset 0 0 1rem #FFC959;
+}
+
+.perfil {
+    width: 75%;
+    cursor: pointer;
+    border-radius: 50%;
 }
 
 ul {
@@ -94,13 +109,16 @@ li {
     position: relative;
     display: block;
     color: #fff;
-    font-size: 35px;
-    width: 60px;
-    height: 60px;
+    font-size: 45px;
+    width: 80px;
+    height: 80px;
     background: #090302;
-    line-height: 60px;
+    line-height: 80px;
     border-radius: 50%;
-    margin: 0 15px;
+}
+
+a {
+    margin: 0 20px;
 }
 
 li:before {
@@ -197,12 +215,6 @@ footer {
     justify-content: center;
 }
 
-.perfil {
-    width: 75%;
-    cursor: pointer;
-    border-radius: 50%;
-}
-
 img.logo {
-    width: 10%;
+    height: 60px;
 }
