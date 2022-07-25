@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="imgs/favicon.ico">
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="js/script.js"></script>
     <script src="https://kit.fontawesome.com/fef2377cb4.js" crossorigin="anonymous"></script>
     <title>Página de Apresentação</title>
 </head>
+
 <body>
     <header class="menu">
         <ul>
@@ -30,16 +33,23 @@
         </ul>
     </header>
     <main class="container">
-        <div class="border-1">
-            <div class="border-2">
-                <div class="border-3">
-                    <img src="imgs/perfil-2.png" alt="foto-perfil" class="perfil">
+        <div class="border" id="border-1">
+            <div class="border" id="border-2">
+                <div class="border" id="border-3">
+                    <img src="imgs/perfil-2.png" alt="foto-perfil" class="perfil" id="perfil" onclick="abrir()" />
                 </div>
             </div>
         </div>
     </main>
+    <section class="appear" id="about" onclick="fechar()">
+        <div class="face">
+            <h1>Sobre Mim<br></h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel incidunt blanditiis accusamus voluptatibus excepturi maxime consectetur sed consequuntur aliquam temporibus qui dolorem laudantium, quae, ipsum, deleniti totam. Architecto, animi at.</p>
+        </div>
+    </section>
     <footer>
         <img src="imgs/logo.png" alt="logo" class="logo">
     </footer>
 </body>
+
 </html>
