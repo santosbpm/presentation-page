@@ -14,6 +14,8 @@ body {
     background-position: 50% 50%;
 }
 
+/* Retângulos com efeito glow (neon) */
+
 .container {
     display: flex;
     flex-direction: row;
@@ -57,14 +59,13 @@ body {
     border: 3px solid #fff;
 }
 
+/* Efeito para a section aparecer */
 .appear {
-    transform: scale(0);
-    transition: all 1s ease-in-out;
+    transition: all .2s ease-in-out;
     backface-visibility: hidden;
 }
 
 #about {
-    display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
@@ -72,15 +73,16 @@ body {
     left: 50%;
     top: 50%;
     transform-style: preserve-3d;
-    transition: all 2s;
+    transition: all 1s;
+    animation: back 1s;
 }
 
 .face {
-    width: 425px;
-    height: 425px;
+    width: 380px;
+    height: 380px;
     position: absolute;
     background-color: #000;
-    border: 1px solid #FFC959;
+    border: 1px solid #000;
     border-radius: 4%;
     padding: 2em;
     box-shadow:
@@ -89,7 +91,7 @@ body {
         0 0 1rem #FFC959,
         0 0 0.4rem #FFC959,
         0 0 1.4rem #FFC959,
-        inset 0 0 1rem #FFC959;
+        inset 0 0 1rem #000;
 }
 
 .perfil {
@@ -97,6 +99,24 @@ body {
     cursor: pointer;
     border-radius: 50%;
 }
+
+.fechar {
+    position: absolute;
+    font-size: 1em;
+    bottom: 0;
+    right: 0;
+    border-radius: 5%;
+    margin-bottom: 1.5em;
+    margin-right: 1.5em;
+    padding: 0.2em 0.5em 0.2em 0.5em;
+}
+
+.fechar:hover {
+    background-color: #FFC959;
+    border-radius: 5%;
+}
+
+/* Ícones de navegação com glow effect */
 
 ul {
     display: flex;
@@ -215,6 +235,150 @@ footer {
     justify-content: center;
 }
 
-img.logo {
-    height: 60px;
+.logo {
+    height: 80px;
+    animation: light 5s;
+    filter: drop-shadow(0 0 .25rem #fff) drop-shadow(0 0 .75rem #fff);
+}
+
+/* Código com efeito typewriting do about */
+
+.type {
+    position: relative;
+    font-family: Monaco, Consolas, monospace;
+    width: 40ch;
+    text-align: left;
+    line-height: 1.2;
+    overflow: hidden;
+    color: #fff;
+    margin: 1em 0px;
+}
+
+h1.type {
+    width: 10ch;
+    margin-top: 0;
+}
+
+@supports (width: 1ch) {
+    .type:before,
+    .type:after {
+        box-sizing: border-box;
+        content: '';
+        position: absolute;
+        z-index: 1;
+        display: block;
+        height: 1.2em;
+        width: 100%;
+        background-color: #000;
+    }
+    .type:before {
+        border-left: 2px solid transparent;
+        top: 100%;
+        animation-name: letters, lines, cursor-type, cursor-wait;
+        animation-fill-mode: both, both, both, backwards;
+    }
+    .type:after {
+        content: '';
+        height: 100%;
+        top: 100%;
+        left: 0;
+        margin-top: 1.2em;
+    }
+}
+
+.type:nth-child(1)::before {
+    animation-duration: 1.75s, 1.75s, 0.3s, 0.8s;
+    animation-timing-function: steps(40, end), steps(1, end), step-end, ease-out;
+    animation-iteration-count: 1, 1, 10, 2;
+    animation-delay: 1.5s, 1.5s, 1.5s, 0s;
+}
+
+.type:nth-child(1)::after {
+    animation: lines 1.75s steps(1, end) 1;
+    animation-fill-mode: both;
+    animation-delay: 1.5s;
+}
+
+.type:nth-child(2)::before {
+    animation-duration: 1.75s, 10.5s, 0.3s, 0.8s;
+    animation-timing-function: steps(40, end), steps(6, end), step-end, ease-out;
+    animation-iteration-count: 6, 1, 220, 2;
+    animation-delay: 4.75s, 4.75s, 4.75s, 3.25s;
+}
+
+.type:nth-child(2)::after {
+    animation: lines 10.5s steps(6, end) 1;
+    animation-fill-mode: both;
+    animation-delay: 4.75s;
+}
+
+.type:nth-child(3)::before {
+    animation-duration: 1.75s, 12.25s, 0.3s, 0.8s;
+    animation-timing-function: steps(40, end), steps(7, end), step-end, ease-out;
+    animation-iteration-count: 7, 1, 240, 2;
+    animation-delay: 16.75s, 16.75s, 16.75s, 15.25s;
+}
+
+.type:nth-child(3)::after {
+    animation: lines 12.25s steps(7, end) 1;
+    animation-fill-mode: both;
+    animation-delay: 16.75s;
+}
+
+/* KEYFRAMES */
+
+@keyframes light {
+    from {
+        filter: drop-shadow(0 0 .25rem #000) drop-shadow(0 0 .75rem #000);
+    }
+    to {
+        filter: drop-shadow(0 0 .25rem #fff) drop-shadow(0 0 .75rem #fff);
+    }
+}
+
+@keyframes back {
+    from {
+        opacity: 0;
+        scale: 0.75;
+    }
+    to {
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+@keyframes letters {
+    from {
+        left: 0;
+    }
+    to {
+        left: 40ch;
+    }
+}
+
+@keyframes lines {
+    from {
+        top: 0;
+    }
+    to {
+        top: 100%;
+    }
+}
+
+@keyframes cursor-type {
+    50% {
+        border-color: #fff;
+    }
+}
+
+@keyframes cursor-wait {
+    0% {
+        box-shadow: inset 2px 0 0 0 rgba(255, 255, 255, 0);
+    }
+    1% {
+        box-shadow: inset 2px 0 0 0 white;
+    }
+    40% {
+        box-shadow: inset 2px 0 0 0 white;
+    }
 }

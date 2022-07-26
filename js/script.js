@@ -1,9 +1,13 @@
-function abrir() {
+function visibilidade() {
     var about = document.getElementById("about");
     about.classList.toggle("appear");
+    displayValue();
 }
 
-function fechar() {
-    var about = document.getElementById("about");
-    about.classList.toggle("appear");
+function displayValue() {
+    if(about.style.display == "none") {
+        about.style.display = "flex";
+    } else {
+        about.style.display = "none";
+    }
 }

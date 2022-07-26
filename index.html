@@ -36,15 +36,27 @@
         <div class="border" id="border-1">
             <div class="border" id="border-2">
                 <div class="border" id="border-3">
-                    <img src="imgs/perfil-2.png" alt="foto-perfil" class="perfil" id="perfil" onclick="abrir()" />
+                    <img src="imgs/perfil-2.png" alt="foto-perfil" class="perfil" id="perfil"
+                        onclick="visibilidade()" />
                 </div>
             </div>
         </div>
     </main>
-    <section class="appear" id="about" onclick="fechar()">
-        <div class="face">
-            <h1>Sobre Mim<br></h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel incidunt blanditiis accusamus voluptatibus excepturi maxime consectetur sed consequuntur aliquam temporibus qui dolorem laudantium, quae, ipsum, deleniti totam. Architecto, animi at.</p>
+    <section class="appear" id="about" style="display: none;">
+        <div class="face" id="typewriter">
+            <h1 class="type">SOBRE MIM</h1>
+
+            <p class="type">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis
+                assumenda sed ducimus. Eaque harum totam enim. Ipsam aliquid illo enim
+                laboriosam blanditiis! Corporis ea expedita, quidem numquam labore quaerat
+                laboriosam.</p>
+
+            <p class="type">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat
+                aspernatur earum quos ullam quod perferendis sapiente temporibus quidem similique
+                aliquid omnis ab, illum provident, accusantium beatae quae reprehenderit officia!
+                Libero.</p>
+
+            <button class="fechar" onclick="visibilidade()">FECHAR</button>
         </div>
     </section>
     <footer>
